@@ -92,7 +92,7 @@ export default function Footer() {
                 className='w-14 h-auto'
               />
               <img
-                src='https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-jt-512.png'
+                src='https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg'
                 alt='J&T'
                 className='w-10 h-auto'
               />
@@ -102,11 +102,11 @@ export default function Footer() {
                 className='w-14 h-auto'
               />
               <img
-                src='https://static.ninjavan.co/assets/common/images/nv_logo.svg'
+                src='https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg'
                 alt='Ninja Van'
                 className='w-16 h-auto'
               />
-              <img src='https://static.be.com.vn/logo/og-be.png' alt='Be' className='w-14 h-auto' />
+              <img src='https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg' alt='Be' className='w-14 h-auto' />
             </div>
           </div>
 
@@ -131,7 +131,7 @@ export default function Footer() {
             <h3 className='font-semibold mb-2'>TẢI ỨNG DỤNG SHOPEE</h3>
             <div className='flex gap-2'>
               <img
-                src='https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/7b5fa188df9d807d6afbb89ab7b0e0b5.png'
+                src='https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg'
                 alt='QR'
                 className='w-16 h-16'
               />

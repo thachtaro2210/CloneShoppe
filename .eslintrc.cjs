@@ -1,40 +1,42 @@
-{
-  "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:import/recommended",
-    "plugin:jsx-a11y/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier"
+const path = require('path')
+module.exports = {
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:import/recommended',
+    'plugin:jsx-a11y/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier'
   ],
-  "plugins": ["prettier"],
-  "settings": {
-    "react": {
-      "version": "detect"
+  plugins: ['prettier'],
+  settings: {
+    react: {
+      version: 'detect'
     },
-    "import/resolver": {
-      "node": {
-        "paths": ["src"],
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+    'import/resolver': {
+      node: {
+        paths: [path.resolve(__dirname)],
+        extensions: ['.js', '.jsx', '.ts', '.tsx']
       }
     }
   },
-  "rules": {
-    "react/react-in-jsx-scope": "off",
-    "react/jsx-no-target-blank": "warn",
-    "prettier/prettier": [
-      "warn",
+  rules: {
+    'react/react-in-jsx-scope': 'off',
+    'react/jsx-no-target-blank': 'warn',
+    'prettier/prettier': [
+      'warn',
       {
-        "arrowParens": "always",
-        "semi": false,
-        "trailingComma": "none",
-        "tabWidth": 2,
-        "endOfLine": "auto",
-        "useTabs": false,
-        "singleQuote": true,
-        "printWidth": 120,
-        "jsxSingleQuote": true
+        arrowParens: 'always',
+        semi: false,
+        trailingComma: 'none',
+        tabWidth: 2,
+        endOfLine: 'auto',
+        useTabs: false,
+        singleQuote: true,
+        printWidth: 120,
+        jsxSingleQuote: true
       }
     ]
   }
 }
+// shift alt f

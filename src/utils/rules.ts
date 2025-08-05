@@ -6,10 +6,10 @@ interface FormData {
   confirm_password: string
 }
 
-type Rules = {
-  [key in keyof FormData]?: RegisterOptions<FormData, key>
-}
 
+type Rules = {
+  [key in keyof FormData]?: RegisterOptions
+}
 export const getRules = (getValue?: UseFormGetValues<any>):Rules => ({
   email: {
     required: { value: true, message: 'Email là bắt buộc' },

@@ -1,27 +1,30 @@
-import React from 'react'
+
 import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 // import { getRules } from '../../utils/rules'
 import Input from '../../Components/input'
-import {schema} from '../../utils/rules'
+import { schema } from '../../utils/rules'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useMutation } from '@tanstack/react-query'
 import { RegisterAccount } from '../../apis/auth.api'
 import { omit } from 'lodash'
+import { isAxiosUnprocessableEntityError } from '../../utils/utils'
+import type { ResponeApi } from '../../types/utils.type'
 interface FormData {
   email: string
   password: string
   confirm_password: string
 }
-const registerAccountMutation = useMutation({
-  mutationFn:(body:Omit<FormData,'confirm_password'>) => RegisterAccount(body)
-})
+
 export default function Register() {
+  const registerAccountMutation = useMutation({
+    mutationFn: (body: Omit<FormData, 'confirm_password'>) => RegisterAccount(body)
+  })
   const {
     register,
     handleSubmit,
     formState: { errors },
-    getValues
+    setError
   } = useForm<FormData>({
     resolver: yupResolver(schema)
   })
@@ -38,11 +41,28 @@ export default function Register() {
   //   }
   // )
   const onSubmit = handleSubmit((data) => {
-    const body = omit(data,['confirm_password'])
-    registerAccountMutation.mutate(body,{
+    const body = omit(data, ['confirm_password'])
+    registerAccountMutation.mutate(body, {
       onSuccess: (data) => {
-        console.log(data);
-        
+        console.log(data)
+      },
+      onError: (error) => {
+        console.log(error)
+        if (isAxiosUnprocessableEntityError<ResponeApi<Omit<FormData, 'confirm_password'>>>(error)) {
+          const formError = error.response?.data.data
+          if (formError?.email) {
+            setError('email',{
+              message:formError.email,
+              type:'Server'
+            })
+          }
+          if(formError?.password){
+             setError('password',{
+              message:formError.password,
+              type:'Server'
+            })
+          }
+        }
       }
     })
   })

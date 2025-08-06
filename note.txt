@@ -1,1 +1,4 @@
- có các router
+ có các router nao ?
+
+ --
+ schema validation voi yup

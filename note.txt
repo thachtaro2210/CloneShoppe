@@ -2,3 +2,6 @@
 
  --
  schema validation voi yup
+ __
+ axios react query 
+___ lodash

@@ -13,7 +13,7 @@ export const schema = yup.object({
   confirm_password : yup.string().required('Nhập lại Password là bắt buộc').max(160,'Độ dài từ 6 - 160 kí tự').min(6,'Độ dài từ 6 - 160 kí tự').oneOf([yup.ref('password')],'Nhập lại password không khớp')
 })
 export type Schema = yup.InferType<typeof schema>
-
+const loginSchema = schema.omit(['confirm_password'])
 type Rules = {
   [key in keyof FormData]?: RegisterOptions
 }

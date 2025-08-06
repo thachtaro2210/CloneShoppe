@@ -5,12 +5,17 @@ import { useForm } from 'react-hook-form'
 import Input from '../../Components/input'
 import {schema} from '../../utils/rules'
 import { yupResolver } from '@hookform/resolvers/yup'
+import { useMutation } from '@tanstack/react-query'
+import { RegisterAccount } from '../../apis/auth.api'
+import { omit } from 'lodash'
 interface FormData {
   email: string
   password: string
   confirm_password: string
 }
-
+const registerAccountMutation = useMutation({
+  mutationFn:(body:Omit<FormData,'confirm_password'>) => RegisterAccount(body)
+})
 export default function Register() {
   const {
     register,
@@ -23,16 +28,24 @@ export default function Register() {
 
   // const rules = getRules(getValues)
 
-  const onSubmit = handleSubmit(
-    data => {
-      console.log(data)
-    },
-    () => {
-      const password = getValues('password')
-      console.log(password)
-    }
-  )
-
+  // const onSubmit = handleSubmit(
+  //   data => {
+  //     console.log(data)
+  //   },
+  //   () => {
+  //     const password = getValues('password')
+  //     console.log(password)
+  //   }
+  // )
+  const onSubmit = handleSubmit((data) => {
+    const body = omit(data,['confirm_password'])
+    registerAccountMutation.mutate(body,{
+      onSuccess: (data) => {
+        console.log(data);
+        
+      }
+    })
+  })
   return (
     <div className='bg-orange-500'>
       <div className='max-w-7xl mx-auto px-4'>

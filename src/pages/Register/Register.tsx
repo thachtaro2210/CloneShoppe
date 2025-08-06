@@ -3,19 +3,19 @@ import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 // import { getRules } from '../../utils/rules'
 import Input from '../../Components/input'
-import { schema } from '../../utils/rules'
+import { schema, type Schema } from '../../utils/rules'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useMutation } from '@tanstack/react-query'
 import { RegisterAccount } from '../../apis/auth.api'
 import { omit } from 'lodash'
 import { isAxiosUnprocessableEntityError } from '../../utils/utils'
 import type { ResponeApi } from '../../types/utils.type'
-interface FormData {
-  email: string
-  password: string
-  confirm_password: string
-}
-
+// interface FormData {
+//   email: string
+//   password: string
+//   confirm_password: string
+// }
+type FormData = Schema
 export default function Register() {
   const registerAccountMutation = useMutation({
     mutationFn: (body: Omit<FormData, 'confirm_password'>) => RegisterAccount(body)

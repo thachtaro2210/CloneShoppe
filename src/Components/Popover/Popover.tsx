@@ -1,4 +1,4 @@
-import React, { useRef,useId, type ElementType} from 'react'
+import React, { useRef, useId, type ElementType } from 'react'
 
 import { useState } from 'react'
 import { offset, shift, FloatingPortal, useFloating, arrow } from '@floating-ui/react-dom-interactions'
@@ -8,14 +8,15 @@ interface Props {
   children: React.ReactNode
   renderPopover: React.ReactNode
   className?: string
-  as?:ElementType
-  initialOpen?:boolean
+  as?: ElementType
+  initialOpen?: boolean
 }
-export default function Popover({ children, className, renderPopover,as: Element = 'div' }: Props) {
+export default function Popover({ children, className, renderPopover, as: Element = 'div' }: Props) {
   const [open, setOpen] = useState(false)
   const arrowRef = useRef<HTMLElement>(null)
   const { x, y, reference, floating, strategy, middlewareData } = useFloating({
-    middleware: [ offset(6),shift(),arrow({ element: arrowRef })]
+    placement: 'bottom',
+    middleware: [offset(6), shift(), arrow({ element: arrowRef })]
   })
   const showPopover = () => {
     setOpen(true)
@@ -75,7 +76,7 @@ export default function Popover({ children, className, renderPopover,as: Element
                 className='absolute z-10 border-[8px] border-x-transparent border-b-white border-t-transparent'
                 style={{
                   left: middlewareData.arrow?.x != null ? `${middlewareData.arrow.x}px` : '',
-                  top: '-12px' 
+                  top: '-12px'
                 }}
               />
 

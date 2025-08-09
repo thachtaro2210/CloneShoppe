@@ -104,19 +104,21 @@
 //     </div>
 //   )
 // }
-import React from 'react'
+import React, { useContext } from 'react'
 import { useForm } from 'react-hook-form'
 import { Link, useNavigate } from 'react-router-dom'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { schema, type Schema } from '../../utils/rules'
 import Input from '../../Components/input'
+import { AppContext } from '../../contexts/app.context'
+import Button from '../../Components/Button'
 
 type FormData = Omit<Schema, 'confirm_password'>
 const loginSchema = schema.omit(['confirm_password'])
 
 export default function Login() {
   const navigate = useNavigate()
-
+    const { isAuthenticated } = useContext(AppContext)
   const {
     register,
     handleSubmit,
@@ -124,7 +126,9 @@ export default function Login() {
   } = useForm<FormData>({
     resolver: yupResolver(loginSchema)
   })
-
+  const hanldeSet = () => {
+    isAuthenticated : true
+  }
   // 👉 Khi form hợp lệ, chuyển hướng ngay, không gọi API gì cả
   const onSubmit = handleSubmit((data) => {
     console.log('Đăng nhập thành công (giả lập)', data)
@@ -157,9 +161,9 @@ export default function Login() {
               />
 
               <div className='mt-3'>
-                <button type='submit' className='w-full text-center py-4 px-2 uppercase bg-red-400 text-white text-sm hover:bg-red-600'>
+                <Button isLoading disabled type='submit' className='w-full text-center py-4 px-2 uppercase bg-red-400 text-white text-sm hover:bg-red-600 flex justify-center items-center' onClick={hanldeSet}>
                   Đăng Nhập
-                </button>
+                </Button>
               </div>
 
               <div className='mt-8'>

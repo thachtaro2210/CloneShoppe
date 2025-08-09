@@ -9,7 +9,8 @@ import { useMutation } from '@tanstack/react-query'
 import { RegisterAccount } from '../../apis/auth.api'
 import { omit } from 'lodash'
 import { isAxiosUnprocessableEntityError } from '../../utils/utils'
-import type { ResponeApi } from '../../types/utils.type'
+import type {   ErrorResponeApi } from '../../types/utils.type'
+import Button from '../../Components/Button'
 // interface FormData {
 //   email: string
 //   password: string
@@ -48,7 +49,7 @@ export default function Register() {
       },
       onError: (error) => {
         console.log(error)
-        if (isAxiosUnprocessableEntityError<ResponeApi<Omit<FormData, 'confirm_password'>>>(error)) {
+        if (isAxiosUnprocessableEntityError<ErrorResponeApi<Omit<FormData, 'confirm_password'>>>(error)) {
           const formError = error.response?.data.data
           if (formError?.email) {
             setError('email',{
@@ -105,9 +106,9 @@ export default function Register() {
               />
 
               <div className='mt-3'>
-                <button className='w-full text-center py-4 px-2 uppercase bg-red-400 text-white text-sm hover:bg-red-600'>
+                <Button disabled isLoading className='w-full text-center py-4 px-2 uppercase bg-red-400 text-white text-sm hover:bg-red-600 justify-center items-center'>
                   Đăng Kí
-                </button>
+                </Button>
               </div>
 
               <div className='mt-8'>

@@ -5,7 +5,7 @@ import Register from './Register'
 import RegisterLayout from '../layout/RegisterLayout'
 import MainLayout from '../layout/MainLayout'
 import Profile from './Profile'
-  const isAuthenticated = true
+  const isAuthenticated = false
 function ProtectedRoute() {
 
   return isAuthenticated ? <Outlet /> : <Navigate to='/login' />

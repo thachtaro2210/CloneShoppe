@@ -179,10 +179,11 @@ export default function Header() {
               <Link to='/register' className='mx-3 capitalize hover:text-white/70 '>
                 Đăng kí
               </Link>
-              <div className='border-r-1px border-r-white/40 h-4'></div>
-              <Link to='/login' className='mx-3 capitalize hover:text-white/70 '>
+              <div className='border-r-1px border-r-white/40 h-4'>
+               <Link to='/login' className='mx-3 capitalize hover:text-white/70 '>
                 Đăng kí
-              </Link>
+              </Link></div>
+             
             </div>
           )}
           {/* <div className='flex items-center py-1 hover:text-gray-300 cursor-pointer ml-6'></div> */}

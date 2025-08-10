@@ -1,33 +1,76 @@
+// src/contexts/app.context.ts (giả định)
 import { createContext, useState } from 'react';
-import { getAccessTokenFromLS } from '../utils/out';
+import type { CartItem, Product } from '../types/product.type';
 
-interface User {
-  username: string;
-  // Thêm các trường khác nếu cần, ví dụ: email, avatar, v.v.
-}
-
-interface AppContextInterface {
+interface AppContextType {
+  cart: CartItem[];
+  addToCart: (item: CartItem) => void;
+  removeFromCart: (id: number) => void;
+  updateQuantity: (id: number, quantity: number) => void;
+  clearCart: () => void;
   isAuthenticated: boolean;
-  setIsAuthenticated: React.Dispatch<React.SetStateAction<boolean>>;
-  user?: User; // User vẫn có thể optional nếu chưa đăng nhập
-  setUser: React.Dispatch<React.SetStateAction<User | undefined>>; // Loại bỏ optional
+  setIsAuthenticated: (value: boolean) => void;
+  user: { username: string } | undefined;
+  setUser: (user: { username: string } | undefined) => void;
 }
 
-const initialAppContext: AppContextInterface = {
-  isAuthenticated: Boolean(getAccessTokenFromLS()),
-  setIsAuthenticated: () => null, // Giá trị mặc định
+export const AppContext = createContext<AppContextType>({
+  cart: [],
+  addToCart: () => {},
+  removeFromCart: () => {},
+  updateQuantity: () => {},
+  clearCart: () => {},
+  isAuthenticated: false,
+  setIsAuthenticated: () => {},
   user: undefined,
-  setUser: () => null, // Giá trị mặc định
-};
+  setUser: () => {},
+});
 
-export const AppContext = createContext<AppContextInterface>(initialAppContext);
+export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [cart, setCart] = useState<CartItem[]>([]);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [user, setUser] = useState<{ username: string } | undefined>(undefined);
 
-export const AppProvider = ({ children }: { children: React.ReactNode }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(initialAppContext.isAuthenticated);
-  const [user, setUser] = useState<User | undefined>(initialAppContext.user);
+  const addToCart = (item: CartItem) => {
+    setCart((prev) => {
+      const existingItem = prev.find((cartItem) => cartItem.id === item.id);
+      if (existingItem) {
+        return prev.map((cartItem) =>
+          cartItem.id === item.id ? { ...cartItem, quantity: cartItem.quantity + item.quantity } : cartItem
+        );
+      }
+      return [...prev, item];
+    });
+  };
+
+  const removeFromCart = (id: number) => {
+    setCart((prev) => prev.filter((item) => item.id !== id));
+  };
+
+  const updateQuantity = (id: number, quantity: number) => {
+    setCart((prev) =>
+      prev.map((item) => (item.id === id ? { ...item, quantity: Math.max(1, quantity) } : item))
+    );
+  };
+
+  const clearCart = () => {
+    setCart([]);
+  };
 
   return (
-    <AppContext.Provider value={{ isAuthenticated, setIsAuthenticated, user, setUser }}>
+    <AppContext.Provider
+      value={{
+        cart,
+        addToCart,
+        removeFromCart,
+        updateQuantity,
+        clearCart,
+        isAuthenticated,
+        setIsAuthenticated,
+        user,
+        setUser,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );

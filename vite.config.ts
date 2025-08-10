@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [tailwindcss(),react()],
   css: {
-    postcss: {},  // Vite tự động tìm postcss.config.js và tailwind.config.js
+    postcss: {}, 
     devSourcemap: true,
   },
   resolve: {
@@ -14,6 +14,6 @@ export default defineConfig({
     }
   },
   server: {
-    port: 8000,
+    port: 3000,
   }
 })

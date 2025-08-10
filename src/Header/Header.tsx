@@ -1,5 +1,5 @@
 import React, { useContext, useRef } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { FloatingPortal, useFloating, arrow } from '@floating-ui/react-dom-interactions'
 import { AnimatePresence } from 'framer-motion'
@@ -21,17 +21,28 @@ export default function Header() {
   // const hidePopover = () => {
   //   setOpen(false)
   // }
-  const { setIsAuthenticated, isAuthenticated } = useContext(AppContext)
+  const { setIsAuthenticated, isAuthenticated, user,setUser } = useContext(AppContext)
+   const navigate = useNavigate();
   const logoutMutation = useMutation({
-    mutationFn: () => logout(),
-    onSuccess: () => {
-      console.log('log out')
-      setIsAuthenticated(false)
-    }
-  })
-  const handlelogout = () => {
-    logoutMutation.mutate()
+  mutationFn: () => logout(),
+  onSuccess: () => {
+    console.log('Logout successful');
+    setIsAuthenticated(false);
+    setUser(undefined);
+    localStorage.removeItem('access_token');
+    navigate('/');
+  },
+  onError: (error) => {
+    console.error('Logout failed:', error);
+    // Có thể hiển thị thông báo lỗi cho người dùng
   }
+});
+  const handlelogout = () => {
+  setIsAuthenticated(false);
+  setUser(undefined);
+  localStorage.removeItem('access_token');
+  navigate('/');
+};
   return (
     <div className='pb-5 pl-2 bg-[linear-gradient(-180deg,#f53d2d,#f63)] text-white'>
       <div className='container'>
@@ -171,22 +182,20 @@ export default function Header() {
                   className='w-full g-full object-cover rounded-full'
                 />
               </div>
-              <div>ThachTaro</div>
+              <div>{user?.username || 'User'}</div>
             </Popover>
           )}
-          {!isAuthenticated && (
+        {!isAuthenticated && (
             <div className='flex items-center'>
-              <Link to='/register' className='mx-3 capitalize hover:text-white/70 '>
+              <Link to='/register' className='mx-3 capitalize hover:text-white/70'>
                 Đăng kí
               </Link>
-              <div className='border-r-1px border-r-white/40 h-4'>
-               <Link to='/login' className='mx-3 capitalize hover:text-white/70 '>
-                Đăng kí
-              </Link></div>
-             
+              <div className='border-r-[1px] border-r-white/40 h-4'></div>
+              <Link to='/login' className='mx-3 capitalize hover:text-white/70'>
+                Đăng nhập
+              </Link>
             </div>
           )}
-          {/* <div className='flex items-center py-1 hover:text-gray-300 cursor-pointer ml-6'></div> */}
         </div>
         <div className='grid grid-cols-12 gap-4 items-end'>
           <Link to='/' className='col-span-2 ml-2'>

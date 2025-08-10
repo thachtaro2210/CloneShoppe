@@ -1,8 +1,10 @@
 const Product = require('../models/product.model');
 
 exports.getProducts = (req, res) => {
-  const products = Product.getAll();
-  res.json(products);
+  const { sortBy, page, limit, category_id, fromPrice, toPrice, rating } = req.query;
+  const params = { sortBy, page, limit, category_id, fromPrice, toPrice, rating };
+  const result = Product.getProductsWithFilters(params);
+  res.json(result);
 };
 
 exports.getProduct = (req, res) => {
@@ -32,4 +34,10 @@ exports.deleteProduct = (req, res) => {
   const id = parseInt(req.params.id);
   Product.delete(id);
   res.status(204).end();
+};
+
+// Thêm controller cho categories
+exports.getCategories = (req, res) => {
+  const categories = Product.getAllCategories();
+  res.json(categories);
 };

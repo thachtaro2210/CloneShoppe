@@ -1,3 +1,4 @@
+// src/utils/rules.ts
 import type { RegisterOptions, UseFormGetValues } from 'react-hook-form';
 import * as yup from 'yup';
 
@@ -29,7 +30,6 @@ export const schema = yup.object({
 export type Schema = yup.InferType<typeof schema>;
 export const loginSchema = schema.omit(['confirm_password']);
 
-
 type Rules = {
   [key in keyof FormData]?: RegisterOptions;
 };
@@ -49,8 +49,9 @@ export const getRules = (getValues?: UseFormGetValues<any>): Rules => ({
     required: { value: true, message: 'Nhập lại Password là bắt buộc' },
     minLength: { value: 6, message: 'Nhập lại Password phải có ít nhất 6 ký tự' },
     maxLength: { value: 160, message: 'Nhập lại Password không được vượt quá 160 ký tự' },
-    validate: typeof getValues === 'function'
-      ? (value) => value === getValues('password') || 'Nhập lại Password không khớp'
-      : undefined,
+    validate:
+      typeof getValues === 'function'
+        ? (value) => value === getValues('password') || 'Nhập lại Password không khớp'
+        : undefined,
   },
 });

@@ -1,0 +1,605 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Thời trang nam"
+    },
+    {
+      "id": 2,
+      "name": "Thời trang nữ"
+    },
+    {
+      "id": 3,
+      "name": "Thiết bị điện tử"
+    },
+    {
+      "id": 4,
+      "name": "Làm đẹp & mỹ phẩm"
+    },
+    {
+      "id": 5,
+      "name": "Gia dụng"
+    },
+    {
+      "id": 6,
+      "name": "Thể thao & dã ngoại"
+    }
+  ],
+  "products": [
+    {
+      "id": 101,
+      "title": "Áo thun nam cổ tròn cotton basic",
+      "price": 99000,
+      "original_price": 159000,
+      "discount": 38,
+      "sold": 2450,
+      "rating": 4.7,
+      "rating_count": 128,
+      "category_id": 1,
+      "images": [
+        "https://cf.shopee.vn/file/abc123",
+        "https://cf.shopee.vn/file/def456"
+      ],
+      "shop_name": "Store Fashion Nam",
+      "shop_rating": 4.8
+    },
+    {
+      "id": 102,
+      "title": "Quần jean rách skinny nam",
+      "price": 249000,
+      "original_price": 349000,
+      "discount": 29,
+      "sold": 1320,
+      "rating": 4.6,
+      "rating_count": 89,
+      "category_id": 1,
+      "images": [
+        "https://cf.shopee.vn/file/ghi789"
+      ],
+      "shop_name": "Denim Store",
+      "shop_rating": 4.5
+    },
+    {
+      "id": 103,
+      "title": "Áo sơ mi nam dài tay Hàn Quốc",
+      "price": 199000,
+      "original_price": 299000,
+      "discount": 33,
+      "sold": 980,
+      "rating": 4.5,
+      "rating_count": 75,
+      "category_id": 1,
+      "images": [
+        "https://cf.shopee.vn/file/namshirt1"
+      ],
+      "shop_name": "Korea Style",
+      "shop_rating": 4.6
+    },
+    {
+      "id": 104,
+      "title": "Quần short kaki nam",
+      "price": 159000,
+      "original_price": 219000,
+      "discount": 27,
+      "sold": 850,
+      "rating": 4.4,
+      "rating_count": 60,
+      "category_id": 1,
+      "images": [
+        "https://cf.shopee.vn/file/menshort1"
+      ],
+      "shop_name": "Summer Wear",
+      "shop_rating": 4.5
+    },
+    {
+      "id": 105,
+      "title": "Áo khoác bomber nam",
+      "price": 299000,
+      "original_price": 459000,
+      "discount": 35,
+      "sold": 670,
+      "rating": 4.7,
+      "rating_count": 92,
+      "category_id": 1,
+      "images": [
+        "https://cf.shopee.vn/file/bomber1"
+      ],
+      "shop_name": "Urban Street",
+      "shop_rating": 4.8
+    },
+    {
+      "id": 106,
+      "title": "Giày sneaker nam trắng",
+      "price": 349000,
+      "original_price": 499000,
+      "discount": 30,
+      "sold": 1540,
+      "rating": 4.8,
+      "rating_count": 210,
+      "category_id": 1,
+      "images": [
+        "https://cf.shopee.vn/file/menshoes1"
+      ],
+      "shop_name": "Sneaker Zone",
+      "shop_rating": 4.9
+    },
+    {
+      "id": 107,
+      "title": "Quần jogger thể thao nam",
+      "price": 179000,
+      "original_price": 259000,
+      "discount": 31,
+      "sold": 760,
+      "rating": 4.5,
+      "rating_count": 68,
+      "category_id": 1,
+      "images": [
+        "https://cf.shopee.vn/file/jogger1"
+      ],
+      "shop_name": "Sporty Life",
+      "shop_rating": 4.7
+    },
+    {
+      "id": 108,
+      "title": "Áo polo nam cổ bẻ",
+      "price": 129000,
+      "original_price": 189000,
+      "discount": 32,
+      "sold": 1240,
+      "rating": 4.6,
+      "rating_count": 88,
+      "category_id": 1,
+      "images": [
+        "https://cf.shopee.vn/file/polo1"
+      ],
+      "shop_name": "Men Classic",
+      "shop_rating": 4.8
+    },
+    {
+      "id": 109,
+      "title": "Áo sweater nam form rộng",
+      "price": 219000,
+      "original_price": 329000,
+      "discount": 33,
+      "sold": 540,
+      "rating": 4.7,
+      "rating_count": 54,
+      "category_id": 1,
+      "images": [
+        "https://cf.shopee.vn/file/sweater1"
+      ],
+      "shop_name": "Winter Cozy",
+      "shop_rating": 4.6
+    },
+    {
+      "id": 110,
+      "title": "Balo laptop nam chống nước",
+      "price": 259000,
+      "original_price": 399000,
+      "discount": 35,
+      "sold": 860,
+      "rating": 4.8,
+      "rating_count": 73,
+      "category_id": 1,
+      "images": [
+        "https://cf.shopee.vn/file/bag1"
+      ],
+      "shop_name": "Bag City",
+      "shop_rating": 4.8
+    },
+    {
+      "id": 201,
+      "title": "Đầm maxi hoa nhí nữ",
+      "price": 199000,
+      "original_price": 299000,
+      "discount": 33,
+      "sold": 3120,
+      "rating": 4.9,
+      "rating_count": 240,
+      "category_id": 2,
+      "images": [
+        "https://cf.shopee.vn/file/jkl012"
+      ],
+      "shop_name": "Pretty Dress",
+      "shop_rating": 4.9
+    },
+    {
+      "id": 202,
+      "title": "Áo khoác cardigan nữ",
+      "price": 229000,
+      "original_price": 339000,
+      "discount": 32,
+      "sold": 890,
+      "rating": 4.8,
+      "rating_count": 112,
+      "category_id": 2,
+      "images": [
+        "https://cf.shopee.vn/file/cardigan1"
+      ],
+      "shop_name": "Cozy Girl",
+      "shop_rating": 4.9
+    },
+    {
+      "id": 203,
+      "title": "Chân váy xếp ly nữ",
+      "price": 149000,
+      "original_price": 219000,
+      "discount": 32,
+      "sold": 1340,
+      "rating": 4.7,
+      "rating_count": 95,
+      "category_id": 2,
+      "images": [
+        "https://cf.shopee.vn/file/skirt1"
+      ],
+      "shop_name": "Sweet Style",
+      "shop_rating": 4.8
+    },
+    {
+      "id": 204,
+      "title": "Áo sơ mi nữ công sở",
+      "price": 179000,
+      "original_price": 259000,
+      "discount": 31,
+      "sold": 760,
+      "rating": 4.6,
+      "rating_count": 84,
+      "category_id": 2,
+      "images": [
+        "https://cf.shopee.vn/file/womenshirt1"
+      ],
+      "shop_name": "Office Chic",
+      "shop_rating": 4.7
+    },
+    {
+      "id": 205,
+      "title": "Set bộ nữ thể thao",
+      "price": 199000,
+      "original_price": 289000,
+      "discount": 31,
+      "sold": 640,
+      "rating": 4.8,
+      "rating_count": 70,
+      "category_id": 2,
+      "images": [
+        "https://cf.shopee.vn/file/womensport1"
+      ],
+      "shop_name": "Sport Girl",
+      "shop_rating": 4.8
+    },
+    {
+      "id": 206,
+      "title": "Áo thun nữ form rộng",
+      "price": 99000,
+      "original_price": 159000,
+      "discount": 38,
+      "sold": 1240,
+      "rating": 4.7,
+      "rating_count": 105,
+      "category_id": 2,
+      "images": [
+        "https://cf.shopee.vn/file/womentshirt1"
+      ],
+      "shop_name": "Casual Lady",
+      "shop_rating": 4.8
+    },
+    {
+      "id": 207,
+      "title": "Đầm body dự tiệc nữ",
+      "price": 329000,
+      "original_price": 499000,
+      "discount": 34,
+      "sold": 520,
+      "rating": 4.9,
+      "rating_count": 85,
+      "category_id": 2,
+      "images": [
+        "https://cf.shopee.vn/file/womendress1"
+      ],
+      "shop_name": "Glamour",
+      "shop_rating": 4.9
+    },
+    {
+      "id": 208,
+      "title": "Giày cao gót 7cm nữ",
+      "price": 269000,
+      "original_price": 399000,
+      "discount": 33,
+      "sold": 940,
+      "rating": 4.8,
+      "rating_count": 98,
+      "category_id": 2,
+      "images": [
+        "https://cf.shopee.vn/file/highheel1"
+      ],
+      "shop_name": "Elegant Step",
+      "shop_rating": 4.9
+    },
+    {
+      "id": 209,
+      "title": "Túi xách nữ da PU",
+      "price": 199000,
+      "original_price": 299000,
+      "discount": 33,
+      "sold": 1200,
+      "rating": 4.7,
+      "rating_count": 102,
+      "category_id": 2,
+      "images": [
+        "https://cf.shopee.vn/file/womenbag1"
+      ],
+      "shop_name": "Bag Love",
+      "shop_rating": 4.8
+    },
+    {
+      "id": 210,
+      "title": "Mũ bucket nữ",
+      "price": 99000,
+      "original_price": 149000,
+      "discount": 34,
+      "sold": 780,
+      "rating": 4.6,
+      "rating_count": 65,
+      "category_id": 2,
+      "images": [
+        "https://cf.shopee.vn/file/womenhat1"
+      ],
+      "shop_name": "Hat World",
+      "shop_rating": 4.7
+    },
+    {
+      "id": 301,
+      "title": "Tai nghe Bluetooth Earfun Air",
+      "price": 399000,
+      "original_price": 599000,
+      "discount": 33,
+      "sold": 980,
+      "rating": 4.4,
+      "rating_count": 65,
+      "category_id": 3,
+      "images": [
+        "https://cf.shopee.vn/file/mno345"
+      ],
+      "shop_name": "Tech World",
+      "shop_rating": 4.6
+    },
+    {
+      "id": 401,
+      "title": "Serum dưỡng trắng da Vitamin C",
+      "price": 159000,
+      "original_price": 259000,
+      "discount": 38,
+      "sold": 1580,
+      "rating": 4.8,
+      "rating_count": 180,
+      "category_id": 4,
+      "images": [
+        "https://cf.shopee.vn/file/pqr678"
+      ],
+      "shop_name": "Beauty Care",
+      "shop_rating": 4.7
+    },
+    {
+      "id": 111,
+      "title": "Áo hoodie nam in hình",
+      "price": 279000,
+      "original_price": 399000,
+      "discount": 30,
+      "sold": 450,
+      "rating": 4.6,
+      "rating_count": 50,
+      "category_id": 1,
+      "images": [
+        "https://cf.shopee.vn/file/hoodie1"
+      ],
+      "shop_name": "Street Vibes",
+      "shop_rating": 4.7
+    },
+    {
+      "id": 112,
+      "title": "Kính mát nam thời trang",
+      "price": 149000,
+      "original_price": 229000,
+      "discount": 35,
+      "sold": 320,
+      "rating": 4.5,
+      "rating_count": 40,
+      "category_id": 1,
+      "images": [
+        "https://cf.shopee.vn/file/sunglasses1"
+      ],
+      "shop_name": "Cool Optics",
+      "shop_rating": 4.6
+    },
+    {
+      "id": 211,
+      "title": "Áo croptop nữ họa tiết",
+      "price": 129000,
+      "original_price": 189000,
+      "discount": 32,
+      "sold": 890,
+      "rating": 4.7,
+      "rating_count": 95,
+      "category_id": 2,
+      "images": [
+        "https://cf.shopee.vn/file/croptop1"
+      ],
+      "shop_name": "Trendy Girl",
+      "shop_rating": 4.8
+    },
+    {
+      "id": 212,
+      "title": "Váy liền nữ cổ yếm",
+      "price": 179000,
+      "original_price": 259000,
+      "discount": 31,
+      "sold": 650,
+      "rating": 4.6,
+      "rating_count": 70,
+      "category_id": 2,
+      "images": [
+        "https://cf.shopee.vn/file/yemdress1"
+      ],
+      "shop_name": "Vintage Charm",
+      "shop_rating": 4.7
+    },
+    {
+      "id": 302,
+      "title": "Loa Bluetooth mini JBL",
+      "price": 499000,
+      "original_price": 699000,
+      "discount": 29,
+      "sold": 540,
+      "rating": 4.5,
+      "rating_count": 60,
+      "category_id": 3,
+      "images": [
+        "https://cf.shopee.vn/file/jblspeaker1"
+      ],
+      "shop_name": "Audio Hub",
+      "shop_rating": 4.7
+    },
+    {
+      "id": 303,
+      "title": "Đồng hồ thông minh Xiaomi",
+      "price": 799000,
+      "original_price": 999000,
+      "discount": 20,
+      "sold": 310,
+      "rating": 4.4,
+      "rating_count": 45,
+      "category_id": 3,
+      "images": [
+        "https://cf.shopee.vn/file/xiaomiwatch1"
+      ],
+      "shop_name": "Tech Gear",
+      "shop_rating": 4.6
+    },
+    {
+      "id": 402,
+      "title": "Kem dưỡng ẩm da ban đêm",
+      "price": 199000,
+      "original_price": 299000,
+      "discount": 33,
+      "sold": 1240,
+      "rating": 4.7,
+      "rating_count": 110,
+      "category_id": 4,
+      "images": [
+        "https://cf.shopee.vn/file/moisturizer1"
+      ],
+      "shop_name": "Skin Bliss",
+      "shop_rating": 4.8
+    },
+    {
+      "id": 403,
+      "title": "Mặt nạ dưỡng da collagen",
+      "price": 89000,
+      "original_price": 129000,
+      "discount": 31,
+      "sold": 1980,
+      "rating": 4.8,
+      "rating_count": 150,
+      "category_id": 4,
+      "images": [
+        "https://cf.shopee.vn/file/mask1"
+      ],
+      "shop_name": "Glow Skin",
+      "shop_rating": 4.9
+    },
+    {
+      "id": 501,
+      "title": "Nồi chiên không dầu 4L",
+      "price": 999000,
+      "original_price": 1299000,
+      "discount": 23,
+      "sold": 420,
+      "rating": 4.6,
+      "rating_count": 55,
+      "category_id": 5,
+      "images": [
+        "https://cf.shopee.vn/file/airfryer1"
+      ],
+      "shop_name": "Home Kitchen",
+      "shop_rating": 4.7
+    },
+    {
+      "id": 601,
+      "title": "Giày chạy bộ nam Nike",
+      "price": 1299000,
+      "original_price": 1699000,
+      "discount": 24,
+      "sold": 280,
+      "rating": 4.9,
+      "rating_count": 90,
+      "category_id": 6,
+      "images": [
+        "https://cf.shopee.vn/file/runningshoes1"
+      ],
+      "shop_name": "Sport Master",
+      "shop_rating": 4.8
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin123",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "username": "user1",
+      "password": "user123",
+      "role": "customer"
+    },
+    {
+      "id": 3,
+      "username": "user2",
+      "password": "user456",
+      "role": "customer"
+    },
+    {
+      "id": 4,
+      "username": "moderator",
+      "password": "mod123",
+      "role": "moderator"
+    },
+    {
+      "id": 1754815408062,
+      "username": "ta123",
+      "password": "$2b$10$lURYIM.JvAxc8xkZb7zqru7DASF6eb08wJrwdhwF1KbJMjzqI1Fbe",
+      "role": "customer"
+    }
+  ],
+  "cart": [
+    {
+      "id": 1,
+      "user_id": 2,
+      "items": [
+        {
+          "product_id": 101,
+          "quantity": 2
+        },
+        {
+          "product_id": 301,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "user_id": 3,
+      "items": [
+        {
+          "product_id": 201,
+          "quantity": 1
+        },
+        {
+          "product_id": 401,
+          "quantity": 3
+        }
+      ]
+    }
+  ]
+}

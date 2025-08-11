@@ -5,11 +5,13 @@ import { toast } from 'react-toastify';
 import { AppContext } from '../../../contexts/app.context';
 import { getProduct } from '../../../apis/product.api';
 import type { Product } from '../../../types/product.type';
+import { useTranslation } from 'react-i18next';
 
 export default function ProductDetail() {
+  const { t } = useTranslation('product'); // Sử dụng namespace 'product'
   const { id } = useParams<{ id: string }>();
   const { addToCart } = useContext(AppContext);
-  const [quantity, setQuantity] = useState(1); // State để quản lý số lượng
+  const [quantity, setQuantity] = useState(1);
 
   const { data: product, isLoading, error } = useQuery({
     queryKey: ['product', id],
@@ -20,17 +22,17 @@ export default function ProductDetail() {
 
   const handleAddToCart = () => {
     if (product) {
-      addToCart({ ...product, quantity }); // Truyền product kèm quantity
-      toast.success(`Đã thêm ${quantity} ${product.title} vào giỏ hàng`, {
+      addToCart({ ...product, quantity });
+      toast.success(`${t('addedToCart')} ${quantity} ${product.title}`, {
         position: 'top-center',
         autoClose: 2000,
       });
-      setQuantity(1); // Reset số lượng sau khi thêm
+      setQuantity(1);
     }
   };
 
   const handleQuantityChange = (newQuantity: number) => {
-    setQuantity(Math.max(1, newQuantity)); // Đảm bảo số lượng không nhỏ hơn 1
+    setQuantity(Math.max(1, newQuantity));
   };
 
   if (!id || isNaN(Number(id))) {
@@ -38,9 +40,9 @@ export default function ProductDetail() {
       <div className="bg-gray-100 min-h-screen py-12">
         <div className="container mx-auto">
           <div className="bg-white rounded-lg shadow-md p-6 text-center">
-            <p className="text-red-500 text-lg font-semibold">ID sản phẩm không hợp lệ</p>
+            <p className="text-red-500 text-lg font-semibold">{t('invalidProductId')}</p>
             <Link to="/products" className="mt-4 inline-block text-blue-500 hover:underline">
-              Quay lại danh sách sản phẩm
+              {t('backToProducts')}
             </Link>
           </div>
         </div>
@@ -53,7 +55,7 @@ export default function ProductDetail() {
       <div className="bg-gray-100 min-h-screen py-12">
         <div className="container mx-auto">
           <div className="bg-white rounded-lg shadow-md p-6 text-center">
-            <p className="text-gray-600 text-lg animate-pulse">Đang tải...</p>
+            <p className="text-gray-600 text-lg animate-pulse">{t('loading')}</p>
           </div>
         </div>
       </div>
@@ -65,9 +67,9 @@ export default function ProductDetail() {
       <div className="bg-gray-100 min-h-screen py-12">
         <div className="container mx-auto">
           <div className="bg-white rounded-lg shadow-md p-6 text-center">
-            <p className="text-red-500 text-lg font-semibold">{error?.message || 'Sản phẩm không tồn tại'}</p>
+            <p className="text-red-500 text-lg font-semibold">{error?.message || t('productNotFound')}</p>
             <Link to="/products" className="mt-4 inline-block text-blue-500 hover:underline">
-              Quay lại danh sách sản phẩm
+              {t('backToProducts')}
             </Link>
           </div>
         </div>
@@ -80,7 +82,7 @@ export default function ProductDetail() {
       <div className="container mx-auto">
         <div className="mb-6 text-sm text-gray-600">
           <Link to="/products" className="text-blue-500 hover:underline font-medium">
-            Sản phẩm
+            {t('products')}
           </Link>{' '}
           &gt; <span className="text-gray-800">{product.title}</span>
         </div>
@@ -134,7 +136,7 @@ export default function ProductDetail() {
                   ))}
                 </div>
                 <span className="ml-3 text-gray-600 text-sm">
-                  {product.rating || 0} ({product.rating_count || 0} đánh giá) | Đã bán {product.sold || 0}+
+                  {product.rating || 0} ({product.rating_count || 0} {t('reviews')}) | {t('sold')} {product.sold || 0}+
                 </span>
               </div>
               <div className="mb-6">
@@ -175,7 +177,7 @@ export default function ProductDetail() {
                 </button>
               </div>
               <div className="text-gray-600 text-sm">
-                Cửa hàng: {product.shop_name} ({product.shop_rating} sao)
+                {t('store')}: {product.shop_name} ({product.shop_rating} sao)
               </div>
             </div>
           </div>

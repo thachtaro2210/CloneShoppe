@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface SortProductListProps {
   sortBy: string;
@@ -17,6 +18,8 @@ export default function SortProductList({
   totalPages,
   loading,
 }: SortProductListProps) {
+  const { t } = useTranslation('product'); // Sử dụng namespace 'product'
+
   const handleSortChange = (sortValue: string) => {
     setSortBy(sortValue);
     setCurrentPage(1);
@@ -38,14 +41,14 @@ export default function SortProductList({
     <div className="bg-gray-300/40 py-4 px-3">
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div className="flex items-center flex-wrap gap-2">
-          <div className="text-sm">Sắp xếp theo</div>
+          <div className="text-sm">{t('sortBy')}</div>
           <button
             className={`h-8 px-4 capitalize text-sm text-center ${
               sortBy === '' ? 'bg-orange-500 text-white hover:bg-orange-400/80' : 'bg-white text-black hover:bg-slate-100'
             }`}
             onClick={() => handleSortChange('')}
           >
-            Phổ biến
+            {t('popular')}
           </button>
           <button
             className={`h-8 px-4 capitalize text-sm text-center ${
@@ -55,7 +58,7 @@ export default function SortProductList({
             }`}
             onClick={() => handleSortChange('createdAt:desc')}
           >
-            Mới nhất
+            {t('newest')}
           </button>
           <button
             className={`h-8 px-4 capitalize text-sm text-center ${
@@ -65,7 +68,7 @@ export default function SortProductList({
             }`}
             onClick={() => handleSortChange('sold:desc')}
           >
-            Bán chạy
+            {t('bestSelling')}
           </button>
           <select
             className="h-8 px-4 capitalize bg-white text-black text-sm hover:bg-slate-100"
@@ -73,15 +76,15 @@ export default function SortProductList({
             onChange={(e) => handleSortChange(e.target.value)}
           >
             <option value="" disabled>
-              Giá
+              {t('price')}
             </option>
-            <option value="price:asc">Giá: thấp đến cao</option>
-            <option value="price:desc">Giá: cao đến thấp</option>
+            <option value="price:asc">{t('priceLowToHigh')}</option>
+            <option value="price:desc">{t('priceHighToLow')}</option>
           </select>
         </div>
         <div className="flex items-center gap-2 text-sm">
-          <span className="text-orange-500 font-medium">{currentPage}</span>
-          <span>/</span>
+          <span className="text-orange-500 font-medium">{t('page')} {currentPage}</span>
+          <span>{t('of')}</span>
           <span className="text-gray-500">{totalPages}</span>
           <div className="flex ml-2">
             <button

@@ -1,80 +1,91 @@
-import React, { useContext } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { useMutation } from '@tanstack/react-query'
-import { toast } from 'react-toastify'
-import { logout } from '../apis/auth.api'
-import { AppContext } from '../contexts/app.context'
-import Popover from '../Components/Popover'
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useMutation } from '@tanstack/react-query';
+import { toast } from 'react-toastify';
+import { logout } from '../apis/auth.api';
+import { AppContext } from '../contexts/app.context';
+import Popover from '../Components/Popover';
+import { useTranslation } from 'react-i18next';
+import { locales } from '../i18n/i18n';
 
 export default function Header() {
-  const { setIsAuthenticated, isAuthenticated, user, setUser, cart, removeFromCart, clearCart } = useContext(AppContext)
-  const navigate = useNavigate()
+  const { t, i18n } = useTranslation('header'); // Sử dụng namespace 'header'
+  const currentLanguage = locales[i18n.language as keyof typeof locales];
+  const { setIsAuthenticated, isAuthenticated, user, setUser, cart, removeFromCart, clearCart } = useContext(AppContext);
+  const navigate = useNavigate();
 
   const logoutMutation = useMutation({
     mutationFn: () => logout(),
     onSuccess: () => {
-      setIsAuthenticated(false)
-      setUser(undefined)
-      clearCart()
-      localStorage.removeItem('access_token')
-      navigate('/')
-      toast.success('Đăng xuất thành công')
+      setIsAuthenticated(false);
+      setUser(undefined);
+      clearCart();
+      localStorage.removeItem('access_token');
+      navigate('/');
+      toast.success('Đăng xuất thành công');
     },
     onError: (error) => {
-      console.error('Logout failed:', error)
-      toast.error('Đăng xuất thất bại')
-    }
-  })
+      console.error('Logout failed:', error);
+      toast.error('Đăng xuất thất bại');
+    },
+  });
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    const searchQuery = (e.currentTarget.elements.namedItem('search') as HTMLInputElement).value
+    e.preventDefault();
+    const searchQuery = (e.currentTarget.elements.namedItem('search') as HTMLInputElement).value;
     if (searchQuery) {
-      console.log('Search query:', searchQuery)
-      // Example: navigate(`/search?q=${encodeURIComponent(searchQuery)}`);
+      console.log('Search query:', searchQuery);
     }
-  }
+  };
+
+  const changeLanguage = (lng: 'en' | 'vi') => {
+    i18n.changeLanguage(lng);
+  };
 
   return (
-    <div className='pb-5 pl-2 bg-[linear-gradient(-180deg,#f53d2d,#f63)] text-white'>
-      <div className='container'>
-        <div className='flex justify-end'>
+    <div className="pb-5 pl-2 bg-[linear-gradient(-180deg,#f53d2d,#f63)] text-white">
+      <div className="container">
+        <div className="flex justify-end">
           <Popover
-            as='span'
-            className='flex items-center py-1 hover:text-gray-300 cursor-pointer'
+            as="span"
+            className="flex items-center py-1 hover:text-gray-300 cursor-pointer"
             renderPopover={
-              <div className='bg-white relative shadow-md rounded-lg border border-gray-200 w-full sm:max-w-[400px] text-sm'>
-                <div className='flex flex-col py-2 px-3'>
-                  <button className='py-2 px-3 hover:text-orange-500'>Tiếng Việt</button>
-                  <button className='py-2 px-3 hover:text-orange-500 mt-1'>Tiếng Anh</button>
+              <div className="bg-white relative shadow-md rounded-lg border border-gray-200 w-full sm:max-w-[400px] text-sm">
+                <div className="flex flex-col py-2 px-3">
+                  <button className="py-2 px-3 hover:text-orange-500" onClick={() => changeLanguage('vi')}>
+                    {t('vietnamese')}
+                  </button>
+                  <button className="py-2 px-3 hover:text-orange-500 mt-1" onClick={() => changeLanguage('en')}>
+                    {t('english')}
+                  </button>
                 </div>
               </div>
             }
           >
             <svg
-              xmlns='http://www.w3.org/2000/svg'
-              fill='none'
-              viewBox='0 0 24 24'
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
               strokeWidth={1.5}
-              stroke='currentColor'
-              className='size-6'
+              stroke="currentColor"
+              className="size-6"
             >
               <path
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                d='M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418'
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418"
               />
             </svg>
-            <span className='mx-1'>Tiếng Việt</span>
+            <span className="mx-1">{currentLanguage}</span>
             <svg
-              xmlns='http://www.w3.org/2000/svg'
-              fill='none'
-              viewBox='0 0 24 24'
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
               strokeWidth={1.5}
-              stroke='currentColor'
-              className='size-6'
+              stroke="currentColor"
+              className="size-6"
             >
-              <path strokeLinecap='round' strokeLinejoin='round' d='m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5' />
+              <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5" />
             </svg>
           </Popover>
           {isAuthenticated && (
@@ -135,7 +146,7 @@ export default function Header() {
                 type='text'
                 name='search'
                 className='text-black px-4 py-2 border-none outline-none bg-transparent flex-1 text-sm'
-                placeholder='Tìm kiếm sản phẩm...'
+                placeholder={t('searchPlaceholder')}
               />
               <button className='rounded-lg py-2 px-6 flex-shrink-0 bg-orange-500 hover:bg-orange-600 transition-colors duration-200'>
                 <svg

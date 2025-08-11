@@ -1,0 +1,22 @@
+{
+  "products": "Sản phẩm",
+  "reviews": "đánh giá",
+  "sold": "Đã bán",
+  "store": "Cửa hàng",
+  "noProductsFound": "Không tìm thấy sản phẩm",
+  "errorLoading": "Không thể tải dữ liệu. Vui lòng thử lại.",
+  "invalidProductId": "ID sản phẩm không hợp lệ",
+  "backToProducts": "Quay lại danh sách sản phẩm",
+  "loading": "Đang tải...",
+  "productNotFound": "Sản phẩm không tồn tại",
+  "addedToCart": "Đã thêm",
+  "sortBy": "Sắp xếp theo",
+  "popular": "Phổ biến",
+  "newest": "Mới nhất",
+  "bestSelling": "Bán chạy",
+  "price": "Giá",
+  "priceLowToHigh": "Giá: thấp đến cao",
+  "priceHighToLow": "Giá: cao đến thấp",
+  "page": "Trang",
+  "of": "của"
+}

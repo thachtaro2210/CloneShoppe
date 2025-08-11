@@ -10,14 +10,15 @@ import MainLayout from '../layout/MainLayout';
 import Profile from './Profile';
 import Cart from './Cart/Cart'; // Import the Cart component
 import ProductDetail from './ProductList/ProductDetail/ProductDetail';
+import NotFound from './NotFound';
 
 function ProtectedRoute() {
-  const { isAuthenticated } = useContext(AppContext); // Get isAuthenticated from context
+  const { isAuthenticated } = useContext(AppContext); 
   return isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
 }
 
 function RejectedRoute() {
-  const { isAuthenticated } = useContext(AppContext); // Get isAuthenticated from context
+  const { isAuthenticated } = useContext(AppContext); 
   return !isAuthenticated ? <Outlet /> : <Navigate to="/" />;
 }
 
@@ -45,7 +46,7 @@ export default function useRouteElement() {
           ),
         },
         {
-          path: 'cart', // Add cart route
+          path: 'cart', 
           element: (
             <MainLayout>
               <Cart />
@@ -84,6 +85,14 @@ export default function useRouteElement() {
         },
       ],
     },
+    {
+      path : '*',
+      element:(
+        <MainLayout>
+          <NotFound/>
+        </MainLayout>
+      )
+    }
   ]);
 
   return routeElement;

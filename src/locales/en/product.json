@@ -1,0 +1,22 @@
+{
+  "products": "Products",
+  "reviews": "reviews",
+  "sold": "Sold",
+  "store": "Store",
+  "noProductsFound": "No products found",
+  "errorLoading": "Failed to load data. Please try again.",
+  "invalidProductId": "Invalid product ID",
+  "backToProducts": "Back to products",
+  "loading": "Loading...",
+  "productNotFound": "Product not found",
+  "addedToCart": "Added",
+  "sortBy": "Sort by",
+  "popular": "Popular",
+  "newest": "Newest",
+  "bestSelling": "Best selling",
+  "price": "Price",
+  "priceLowToHigh": "Price: low to high",
+  "priceHighToLow": "Price: high to low",
+  "page": "Page",
+  "of": "of"
+}

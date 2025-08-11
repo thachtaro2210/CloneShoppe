@@ -4,8 +4,10 @@ import type { Product } from '../../types/product.type';
 import AsideFilter from './AsideFilter';
 import ProductComponent from './Product/Product';
 import SortProductList from './SortProductList';
+import { useTranslation } from 'react-i18next';
 
 export default function ProductList() {
+  const { t } = useTranslation('product'); // Sử dụng namespace 'product'
   const [products, setProducts] = useState<Product[]>([]);
   const [categories, setCategories] = useState<{ id: number; name: string }[]>([]);
   const [sortBy, setSortBy] = useState<string>('');
@@ -16,58 +18,55 @@ export default function ProductList() {
   const [filters, setFilters] = useState<{ category_id?: number; fromPrice?: number; toPrice?: number; rating?: number }>({});
   const productsPerPage = 10;
 
-useEffect(() => {
-  const fetchData = async () => {
-    setLoading(true);
-    setError(null);
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      setError(null);
 
-    try {
-      console.log("Fetching categories...");
-      const categoriesResponse = await getCategories();
-      setCategories(Array.isArray(categoriesResponse.data) ? categoriesResponse.data : []);
-      console.log("✅ Categories loaded", categoriesResponse.data);
+      try {
+        console.log("Fetching categories...");
+        const categoriesResponse = await getCategories();
+        setCategories(Array.isArray(categoriesResponse.data) ? categoriesResponse.data : []);
+        console.log("✅ Categories loaded", categoriesResponse.data);
 
-      console.log("Fetching products...");
-      const productsResponse = await getProducts({
-        sortBy,
-        page: currentPage,
-        limit: productsPerPage,
-        ...filters
-      });
-      
-    console.log("Raw data from API:", productsResponse.data);
-const fetchedProducts = Array.isArray((productsResponse.data as any).data)
-  ? (productsResponse.data as any).data
-  : []
-if (fetchedProducts.length === 0) {
-  console.warn("Warning: API returned empty product list for page", currentPage);
-}
-    console.log(fetchedProducts);
-    
-      setProducts(fetchedProducts);
-      console.log("✅ Products loaded", fetchedProducts);
+        console.log("Fetching products...");
+        const productsResponse = await getProducts({
+          sortBy,
+          page: currentPage,
+          limit: productsPerPage,
+          ...filters
+        });
+        
+        console.log("Raw data from API:", productsResponse.data);
+        const fetchedProducts = Array.isArray((productsResponse.data as any).data)
+          ? (productsResponse.data as any).data
+          : [];
+        if (fetchedProducts.length === 0) {
+          console.warn("Warning: API returned empty product list for page", currentPage);
+        }
+        console.log(fetchedProducts);
+        
+        setProducts(fetchedProducts);
+        console.log("✅ Products loaded", fetchedProducts);
 
-      // Use totalPages from API response
-      // setTotalPages(productsResponse.data || Math.ceil(fetchedProducts.length / productsPerPage) || 1);
-      setTotalPages((productsResponse.data as any).totalPages || 1);
-    } catch (err) {
-      console.error("❌ Error fetching data:", err);
-      setError("Failed to load data. Please try again.");
-      setProducts([]);
-      setCategories([]);
-    } finally {
-      setLoading(false);
-    }
-  };
+        setTotalPages((productsResponse.data as any).totalPages || 1);
+      } catch (err) {
+        console.error("❌ Error fetching data:", err);
+        setError(t('errorLoading')); // Dịch lỗi
+        setProducts([]);
+        setCategories([]);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  fetchData();
-}, [sortBy, currentPage, filters]);
-// Phân trang sản phẩm
-const paginatedProducts = products.slice(
-  (currentPage - 1) * productsPerPage,
-  currentPage * productsPerPage
-);
+    fetchData();
+  }, [sortBy, currentPage, filters, t]);
 
+  const paginatedProducts = products.slice(
+    (currentPage - 1) * productsPerPage,
+    currentPage * productsPerPage
+  );
 
   return (
     <div className="bg-gray-200 py-6">
@@ -101,7 +100,7 @@ const paginatedProducts = products.slice(
                   </div>
                 ))
               ) : (
-                <div>No products found.</div>
+                <div>{t('noProductsFound')}</div> // Dịch "No products found"
               )}
             </div>
           </div>

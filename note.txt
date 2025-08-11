@@ -5,3 +5,8 @@
  __
  axios react query 
 ___ lodash
+
+Nang cao 
+Route page 404 
+refresh token
+đa ngôn ngữ i18next

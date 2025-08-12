@@ -1,4 +1,3 @@
-// src/routes/index.tsx
 import { Navigate, Outlet, useRoutes } from 'react-router-dom';
 import { useContext } from 'react';
 import { AppContext } from '../contexts/app.context';
@@ -8,9 +7,10 @@ import Register from './Register';
 import RegisterLayout from '../layout/RegisterLayout';
 import MainLayout from '../layout/MainLayout';
 import Profile from './Profile';
-import Cart from './Cart/Cart'; // Import the Cart component
+import Cart from './Cart/Cart';
 import ProductDetail from './ProductList/ProductDetail/ProductDetail';
 import NotFound from './NotFound';
+import HomePage from './HomePage'; // Giả sử bạn đã tạo HomePage
 
 function ProtectedRoute() {
   const { isAuthenticated } = useContext(AppContext); 
@@ -24,21 +24,32 @@ function RejectedRoute() {
 
 export default function useRouteElement() {
   const routeElement = useRoutes([
+    // Route chính cho HomePage (làm trang chủ)
     {
       path: '/',
       index: true,
+      element: (
+        <MainLayout>
+          <HomePage />
+        </MainLayout>
+      ),
+    },
+    // Route cho danh sách sản phẩm (có thể là /products)
+    {
+      path: '/products',
       element: (
         <MainLayout>
           <ProductList />
         </MainLayout>
       ),
     },
+    // Route bảo vệ (chỉ cho người dùng đã đăng nhập)
     {
       path: '',
       element: <ProtectedRoute />,
       children: [
         {
-          path: 'profile',
+          path: '/profile',
           element: (
             <MainLayout>
               <Profile />
@@ -46,7 +57,7 @@ export default function useRouteElement() {
           ),
         },
         {
-          path: 'cart', 
+          path: '/cart',
           element: (
             <MainLayout>
               <Cart />
@@ -54,15 +65,16 @@ export default function useRouteElement() {
           ),
         },
         {
-      path: '/products/:id',
-      element: (
-        <MainLayout>
-          <ProductDetail />
-        </MainLayout>
-      ),
-    },
+          path: '/products/:id',
+          element: (
+            <MainLayout>
+              <ProductDetail />
+            </MainLayout>
+          ),
+        },
       ],
     },
+    // Route từ chối (chỉ cho người dùng chưa đăng nhập)
     {
       path: '',
       element: <RejectedRoute />,
@@ -85,14 +97,15 @@ export default function useRouteElement() {
         },
       ],
     },
+    // Route 404 Not Found
     {
-      path : '*',
-      element:(
+      path: '*',
+      element: (
         <MainLayout>
-          <NotFound/>
+          <NotFound />
         </MainLayout>
-      )
-    }
+      ),
+    },
   ]);
 
   return routeElement;

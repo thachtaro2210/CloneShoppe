@@ -37,8 +37,8 @@
       "rating_count": 128,
       "category_id": 1,
       "images": [
-        "https://cf.shopee.vn/file/abc123",
-        "https://cf.shopee.vn/file/def456"
+        "https://picsum.photos/200/300?random=1011",
+        "https://picsum.photos/200/300?random=1012"
       ],
       "shop_name": "Store Fashion Nam",
       "shop_rating": 4.8
@@ -54,7 +54,7 @@
       "rating_count": 89,
       "category_id": 1,
       "images": [
-        "https://cf.shopee.vn/file/ghi789"
+        "https://picsum.photos/200/300?random=1021"
       ],
       "shop_name": "Denim Store",
       "shop_rating": 4.5
@@ -70,7 +70,7 @@
       "rating_count": 75,
       "category_id": 1,
       "images": [
-        "https://cf.shopee.vn/file/namshirt1"
+        "https://picsum.photos/200/300?random=1031"
       ],
       "shop_name": "Korea Style",
       "shop_rating": 4.6
@@ -86,7 +86,7 @@
       "rating_count": 60,
       "category_id": 1,
       "images": [
-        "https://cf.shopee.vn/file/menshort1"
+        "https://picsum.photos/200/300?random=1041"
       ],
       "shop_name": "Summer Wear",
       "shop_rating": 4.5
@@ -102,7 +102,7 @@
       "rating_count": 92,
       "category_id": 1,
       "images": [
-        "https://cf.shopee.vn/file/bomber1"
+        "https://picsum.photos/200/300?random=1051"
       ],
       "shop_name": "Urban Street",
       "shop_rating": 4.8
@@ -118,7 +118,7 @@
       "rating_count": 210,
       "category_id": 1,
       "images": [
-        "https://cf.shopee.vn/file/menshoes1"
+        "https://picsum.photos/200/300?random=1061"
       ],
       "shop_name": "Sneaker Zone",
       "shop_rating": 4.9
@@ -134,7 +134,7 @@
       "rating_count": 68,
       "category_id": 1,
       "images": [
-        "https://cf.shopee.vn/file/jogger1"
+        "https://picsum.photos/200/300?random=1071"
       ],
       "shop_name": "Sporty Life",
       "shop_rating": 4.7
@@ -150,7 +150,7 @@
       "rating_count": 88,
       "category_id": 1,
       "images": [
-        "https://cf.shopee.vn/file/polo1"
+        "https://picsum.photos/200/300?random=1081"
       ],
       "shop_name": "Men Classic",
       "shop_rating": 4.8
@@ -166,7 +166,7 @@
       "rating_count": 54,
       "category_id": 1,
       "images": [
-        "https://cf.shopee.vn/file/sweater1"
+        "https://picsum.photos/200/300?random=1091"
       ],
       "shop_name": "Winter Cozy",
       "shop_rating": 4.6
@@ -182,7 +182,7 @@
       "rating_count": 73,
       "category_id": 1,
       "images": [
-        "https://cf.shopee.vn/file/bag1"
+        "https://picsum.photos/200/300?random=1101"
       ],
       "shop_name": "Bag City",
       "shop_rating": 4.8
@@ -198,7 +198,7 @@
       "rating_count": 240,
       "category_id": 2,
       "images": [
-        "https://cf.shopee.vn/file/jkl012"
+        "https://picsum.photos/200/300?random=2011"
       ],
       "shop_name": "Pretty Dress",
       "shop_rating": 4.9
@@ -214,7 +214,7 @@
       "rating_count": 112,
       "category_id": 2,
       "images": [
-        "https://cf.shopee.vn/file/cardigan1"
+        "https://picsum.photos/200/300?random=2021"
       ],
       "shop_name": "Cozy Girl",
       "shop_rating": 4.9
@@ -230,7 +230,7 @@
       "rating_count": 95,
       "category_id": 2,
       "images": [
-        "https://cf.shopee.vn/file/skirt1"
+        "https://picsum.photos/200/300?random=2031"
       ],
       "shop_name": "Sweet Style",
       "shop_rating": 4.8
@@ -246,7 +246,7 @@
       "rating_count": 84,
       "category_id": 2,
       "images": [
-        "https://cf.shopee.vn/file/womenshirt1"
+        "https://picsum.photos/200/300?random=2041"
       ],
       "shop_name": "Office Chic",
       "shop_rating": 4.7
@@ -262,7 +262,7 @@
       "rating_count": 70,
       "category_id": 2,
       "images": [
-        "https://cf.shopee.vn/file/womensport1"
+        "https://picsum.photos/200/300?random=2051"
       ],
       "shop_name": "Sport Girl",
       "shop_rating": 4.8
@@ -278,7 +278,7 @@
       "rating_count": 105,
       "category_id": 2,
       "images": [
-        "https://cf.shopee.vn/file/womentshirt1"
+        "https://picsum.photos/200/300?random=2061"
       ],
       "shop_name": "Casual Lady",
       "shop_rating": 4.8
@@ -294,7 +294,7 @@
       "rating_count": 85,
       "category_id": 2,
       "images": [
-        "https://cf.shopee.vn/file/womendress1"
+        "https://picsum.photos/200/300?random=2071"
       ],
       "shop_name": "Glamour",
       "shop_rating": 4.9
@@ -310,7 +310,7 @@
       "rating_count": 98,
       "category_id": 2,
       "images": [
-        "https://cf.shopee.vn/file/highheel1"
+        "https://picsum.photos/200/300?random=2081"
       ],
       "shop_name": "Elegant Step",
       "shop_rating": 4.9
@@ -326,7 +326,7 @@
       "rating_count": 102,
       "category_id": 2,
       "images": [
-        "https://cf.shopee.vn/file/womenbag1"
+        "https://picsum.photos/200/300?random=2091"
       ],
       "shop_name": "Bag Love",
       "shop_rating": 4.8
@@ -342,7 +342,7 @@
       "rating_count": 65,
       "category_id": 2,
       "images": [
-        "https://cf.shopee.vn/file/womenhat1"
+        "https://picsum.photos/200/300?random=2101"
       ],
       "shop_name": "Hat World",
       "shop_rating": 4.7
@@ -358,7 +358,7 @@
       "rating_count": 65,
       "category_id": 3,
       "images": [
-        "https://cf.shopee.vn/file/mno345"
+        "https://picsum.photos/200/300?random=3011"
       ],
       "shop_name": "Tech World",
       "shop_rating": 4.6
@@ -374,7 +374,7 @@
       "rating_count": 180,
       "category_id": 4,
       "images": [
-        "https://cf.shopee.vn/file/pqr678"
+        "https://picsum.photos/200/300?random=4011"
       ],
       "shop_name": "Beauty Care",
       "shop_rating": 4.7
@@ -390,7 +390,7 @@
       "rating_count": 50,
       "category_id": 1,
       "images": [
-        "https://cf.shopee.vn/file/hoodie1"
+        "https://picsum.photos/200/300?random=1111"
       ],
       "shop_name": "Street Vibes",
       "shop_rating": 4.7
@@ -406,7 +406,7 @@
       "rating_count": 40,
       "category_id": 1,
       "images": [
-        "https://cf.shopee.vn/file/sunglasses1"
+        "https://picsum.photos/200/300?random=1121"
       ],
       "shop_name": "Cool Optics",
       "shop_rating": 4.6
@@ -422,7 +422,7 @@
       "rating_count": 95,
       "category_id": 2,
       "images": [
-        "https://cf.shopee.vn/file/croptop1"
+        "https://picsum.photos/200/300?random=2111"
       ],
       "shop_name": "Trendy Girl",
       "shop_rating": 4.8
@@ -438,7 +438,7 @@
       "rating_count": 70,
       "category_id": 2,
       "images": [
-        "https://cf.shopee.vn/file/yemdress1"
+        "https://picsum.photos/200/300?random=2121"
       ],
       "shop_name": "Vintage Charm",
       "shop_rating": 4.7
@@ -454,7 +454,7 @@
       "rating_count": 60,
       "category_id": 3,
       "images": [
-        "https://cf.shopee.vn/file/jblspeaker1"
+        "https://picsum.photos/200/300?random=3021"
       ],
       "shop_name": "Audio Hub",
       "shop_rating": 4.7
@@ -470,7 +470,7 @@
       "rating_count": 45,
       "category_id": 3,
       "images": [
-        "https://cf.shopee.vn/file/xiaomiwatch1"
+        "https://picsum.photos/200/300?random=3031"
       ],
       "shop_name": "Tech Gear",
       "shop_rating": 4.6
@@ -486,7 +486,7 @@
       "rating_count": 110,
       "category_id": 4,
       "images": [
-        "https://cf.shopee.vn/file/moisturizer1"
+        "https://picsum.photos/200/300?random=4021"
       ],
       "shop_name": "Skin Bliss",
       "shop_rating": 4.8
@@ -502,7 +502,7 @@
       "rating_count": 150,
       "category_id": 4,
       "images": [
-        "https://cf.shopee.vn/file/mask1"
+        "https://picsum.photos/200/300?random=4031"
       ],
       "shop_name": "Glow Skin",
       "shop_rating": 4.9
@@ -518,7 +518,7 @@
       "rating_count": 55,
       "category_id": 5,
       "images": [
-        "https://cf.shopee.vn/file/airfryer1"
+        "https://picsum.photos/200/300?random=5011"
       ],
       "shop_name": "Home Kitchen",
       "shop_rating": 4.7
@@ -534,7 +534,7 @@
       "rating_count": 90,
       "category_id": 6,
       "images": [
-        "https://cf.shopee.vn/file/runningshoes1"
+        "https://picsum.photos/200/300?random=6011"
       ],
       "shop_name": "Sport Master",
       "shop_rating": 4.8

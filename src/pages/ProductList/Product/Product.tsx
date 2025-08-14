@@ -12,7 +12,7 @@ export default function Product({ product }: ProductProps) {
       <div className="bg-white shadow rounded-sm hover:translate-y-[-0.0625rem] hover:shadow-md duration-100 transition-transform">
         <div className="w-full pt-[100%] relative">
           <img
-            src={product.images[1] || 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lwu3ba1vhjvf5b_tn.webp'}
+            src={product.images[0]}
             alt={product.title}
             className="absolute top-0 left-0 bg-white w-full h-full object-cover"
           />

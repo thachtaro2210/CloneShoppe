@@ -7,7 +7,7 @@ import SortProductList from './SortProductList';
 import { useTranslation } from 'react-i18next';
 
 export default function ProductList() {
-  const { t } = useTranslation('product'); // Sử dụng namespace 'product'
+  const { t } = useTranslation('product');
   const [products, setProducts] = useState<Product[]>([]);
   const [categories, setCategories] = useState<{ id: number; name: string }[]>([]);
   const [sortBy, setSortBy] = useState<string>('');
@@ -52,7 +52,7 @@ export default function ProductList() {
         setTotalPages((productsResponse.data as any).totalPages || 1);
       } catch (err) {
         console.error("❌ Error fetching data:", err);
-        setError(t('errorLoading')); // Dịch lỗi
+        setError(t('errorLoading')); 
         setProducts([]);
         setCategories([]);
       } finally {
@@ -100,7 +100,7 @@ export default function ProductList() {
                   </div>
                 ))
               ) : (
-                <div>{t('noProductsFound')}</div> // Dịch "No products found"
+                <div>{t('noProductsFound')}</div>
               )}
             </div>
           </div>
